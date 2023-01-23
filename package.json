@@ -1,6 +1,6 @@
 {
   "name": "@capacitor-community/mdm-appconfig",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "read app config values written by a MDM",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -11,7 +11,7 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "CapacitorCommunityMdmAppConfig.podspec"
+    "CapacitorCommunityMdmAppconfig.podspec"
   ],
   "author": "",
   "license": "MIT",
