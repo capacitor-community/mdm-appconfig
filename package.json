@@ -1,6 +1,6 @@
 {
   "name": "@capacitor-community/mdm-appconfig",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "description": "read app config values written by a MDM",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
