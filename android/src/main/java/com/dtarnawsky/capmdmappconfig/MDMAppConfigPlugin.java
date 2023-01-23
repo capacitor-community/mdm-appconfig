@@ -22,23 +22,19 @@ public class MDMAppConfigPlugin extends Plugin {
 
     @PluginMethod
     public void getValue(PluginCall call) {
-        JSObject ret = new JSObject();
         try {
             Context context = this.bridge.getActivity().getApplicationContext();
             RestrictionsManager resManager = (RestrictionsManager) context.getSystemService(Context.RESTRICTIONS_SERVICE);
             Bundle restrictions = resManager.getApplicationRestrictions();
             Set<String> keys = restrictions.keySet();
-            String keyName = call.getString("key");
+            final String keyName = call.getString("key");
             if (keys != null) {
                 for (String key : keys) {
-                    if (key == keyName) {
-                        call.resolve(
-                            new JSObject() {
-                                {
-                                    put("value", JSONObject.wrap(restrictions.get(key)));
-                                }
-                            }
-                        );
+                    if (key.equals(keyName)) {
+                        JSObject ret = new JSObject();
+                        String value = restrictions.getString(key);
+                        ret.put("value", value == null ? JSObject.NULL : value);
+                        call.resolve(ret);
                         return;
                     }
                 }
@@ -46,7 +42,8 @@ public class MDMAppConfigPlugin extends Plugin {
                 call.reject("No configurations found");
                 return;
             }
-            call.reject("key cannot be found");
+
+            call.reject("key " + keyName + " cannot be found");
         } catch (Exception ex) {
             call.error(ex.getLocalizedMessage());
         }
