@@ -34,15 +34,21 @@ Add the following line to your `androidmanifest.xml` (under `<application...>`):
 
 Create an XML file named `app_restrictions.xml` in the `res/xml` directory to house your defined app restrictions, the format for the XML can be found [here](http://developer.android.com/reference/android/content/RestrictionsManager.html).
 
-Here is an example `app_restrictions.xml` that defines 3 strings:
+Here is an example `app_restrictions.xml` that defines 3 strings (`ionic-email`, `ionic-user`, `ionic-userid`):
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <restrictions xmlns:android="http://schemas.android.com/apk/res/android">
-	<restriction android:key="ionic.email" android:title="email" android:restrictionType="string" android:defaultValue="" />
-	<restriction android:key="ionic.user" android:title="user" android:restrictionType="string" android:defaultValue="" />
-	<restriction android:key="ionic.userid" android:title="userid" android:restrictionType="string" android:defaultValue="" />
+	<restriction android:key="ionic-email" android:title="Ionic Email" android:restrictionType="string" android:defaultValue="" />
+	<restriction android:key="ionic-user" android:title="Ionic User" android:restrictionType="string" android:defaultValue="" />
+	<restriction android:key="ionic-userid" android:title="Ionic Userid" android:restrictionType="string" android:defaultValue="" />
 </restrictions>
 ```
+
+Note: You must define keys in your `app_restrictions.xml` to be able to read their value at runtime.
+
+## iOS
+
+No additional configuration is required for iOS.
 
 ## Usage
 ```typescript
@@ -52,6 +58,8 @@ import { AppConfig } from '@capacitor-community/mdm-appconfig';
 const result = await AppConfig.getValue({ key: 'my.variable.name' });
 console.log(result.value);
 ```
+
+If the key cannot be found the promise will be rejected.
 
 ## VMWare Workspace 1
 When distributing an Application you can create an Assignment and under **Application Configuration** you can send a set of configuration keys that can be read by your application. The screenshot belows shows keys called `ionic.email`, `ionic.user` and `ionic.userid` which Workspace 1 has will write with values related to the enrolled user.
