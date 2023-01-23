@@ -25,7 +25,24 @@ npx cap sync
 ```
 ## Configuration
 
-No configuration required for this plugin
+### Android
+
+Add the following line to your `androidmanifest.xml` (under `<application...>`):
+```xml
+<meta-data android:name=“android.content.APP_RESTRICTIONS” android:resource=“@xml/app_restrictions” />
+```
+
+Create an XML file named `app_restrictions.xml` in the `res/xml` directory to house your defined app restrictions, the format for the XML can be found [here](http://developer.android.com/reference/android/content/RestrictionsManager.html).
+
+Here is an example `app_restrictions.xml` that defines 3 strings:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<restrictions xmlns:android="http://schemas.android.com/apk/res/android">
+	<restriction android:key="ionic.email" android:title="email" android:restrictionType="string" android:defaultValue="" />
+	<restriction android:key="ionic.user" android:title="user" android:restrictionType="string" android:defaultValue="" />
+	<restriction android:key="ionic.userid" android:title="userid" android:restrictionType="string" android:defaultValue="" />
+</restrictions>
+```
 
 ## Usage
 ```typescript

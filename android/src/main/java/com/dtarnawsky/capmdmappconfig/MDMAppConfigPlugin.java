@@ -17,7 +17,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-@CapacitorPlugin(name = "MDMAppConfig")
+@CapacitorPlugin(name = "MDMAppconfig")
 public class MDMAppConfigPlugin extends Plugin {
 
     @PluginMethod
