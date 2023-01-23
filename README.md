@@ -62,7 +62,7 @@ console.log(result.value);
 If the key cannot be found the promise will be rejected.
 
 ## VMWare Workspace 1
-When distributing an Application you can create an Assignment and under **Application Configuration** you can send a set of configuration keys that can be read by your application. The screenshot belows shows keys called `ionic.email`, `ionic.user` and `ionic.userid` which Workspace 1 has will write with values related to the enrolled user.
+When distributing an Application you can create an Assignment and under **Application Configuration** you can send a set of configuration keys that can be read by your application. The screenshot belows shows keys called `ionic-email`, `ionic-user` and `ionic-userid` which Workspace 1 has will write with values related to the enrolled user.
 ![ws1-screenshot](https://user-images.githubusercontent.com/84595830/214071169-3d7f39e9-aa8c-4b8c-8e43-3a072786543c.png)
 
 ## API
