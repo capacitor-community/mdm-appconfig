@@ -29,7 +29,7 @@ npx cap sync
 
 Add the following line to your `androidmanifest.xml` (under `<application...>`):
 ```xml
-<meta-data android:name=“android.content.APP_RESTRICTIONS” android:resource=“@xml/app_restrictions” />
+<meta-data android:name="android.content.APP_RESTRICTIONS" android:resource="@xml/app_restrictions" />
 ```
 
 Create an XML file named `app_restrictions.xml` in the `res/xml` directory to house your defined app restrictions, the format for the XML can be found [here](http://developer.android.com/reference/android/content/RestrictionsManager.html).
