@@ -1,7 +1,7 @@
 {
   "name": "@capacitor-community/mdm-appconfig",
-  "version": "5.0.0",
-  "description": "read app config values written by a MDM",
+  "version": "5.0.1",
+  "description": "Capacitor community plugin for reading app configurations written by a MDM (see appconfig.org) such as VMWare Workspace One.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -25,7 +25,12 @@
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "native",
+    "mdm",
+    "appconfig",
+    "vmware workspace one",
+    "microsoft intune",
+    "mobile device management"
   ],
   "scripts": {
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
