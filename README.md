@@ -15,6 +15,7 @@
 
 | Plugin | Capacitor | Documentation                                                                     |
 | ------ | --------- | --------------------------------------------------------------------------------- |
+| 5.x    | 5.x       | [README](https://github.com/capacitor-community/mdm-appconfig/blob/main/README.md) |
 | 4.x    | 4.x       | [README](https://github.com/capacitor-community/mdm-appconfig/blob/main/README.md) |
 
 ## Installation
