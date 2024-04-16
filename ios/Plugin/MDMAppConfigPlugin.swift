@@ -14,12 +14,12 @@ public class MDMAppConfigPlugin: CAPPlugin {
             call.reject("Parameter `key` not provided.")
             return
         }
-        if let managedConfigDict = UserDefaults.standard.dictionary(forKey: "com.apple.configuration.managed"){
-          if let keyValue = managedConfigDict[key]{
-               call.resolve([ "value": keyValue ])
-          } else {
-            call.reject("Key not found.")
-          }
+        if let managedConfigDict = UserDefaults.standard.dictionary(forKey: "com.apple.configuration.managed") {
+            if let keyValue = managedConfigDict[key] {
+                call.resolve([ "value": keyValue ])
+            } else {
+                call.reject("Key not found.")
+            }
         } else {
             call.reject("Managed configuration not found.")
         }
