@@ -45,7 +45,7 @@ public class MDMAppConfigPlugin extends Plugin {
 
             call.reject("key " + keyName + " cannot be found");
         } catch (Exception ex) {
-            call.error(ex.getLocalizedMessage());
+            call.reject(ex.getLocalizedMessage());
         }
     }
 }
