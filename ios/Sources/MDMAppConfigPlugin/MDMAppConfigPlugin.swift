@@ -6,7 +6,12 @@ import Capacitor
  * here: https://capacitorjs.com/docs/plugins/ios
  */
 @objc(MDMAppConfigPlugin)
-public class MDMAppConfigPlugin: CAPPlugin {
+public class MDMAppConfigPlugin: CAPPlugin, CAPBridgedPlugin {
+    public let identifier = "MDMAppConfigPlugin" 
+    public let jsName = "MDMAppConfig" 
+    public let pluginMethods: [CAPPluginMethod] = [
+        CAPPluginMethod(name: "getValue", returnType: CAPPluginReturnPromise),
+    ] 
 
     @objc func getValue(_ call: CAPPluginCall) {
         let key = call.getString("key")
