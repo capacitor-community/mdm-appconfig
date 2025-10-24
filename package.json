@@ -1,6 +1,6 @@
 {
   "name": "@capacitor-community/mdm-appconfig",
-  "version": "7.0.0",
+  "version": "7.1.0",
   "description": "Capacitor community plugin for reading app configurations written by a MDM (see appconfig.org) such as VMWare Workspace One.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
